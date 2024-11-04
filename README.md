@@ -25,19 +25,23 @@ https://meowfacts.herokuapp.com/?id=3
 **TestCases **
 <img width="862" alt="Screenshot 2024-11-04 at 9 19 20 PM" src="https://github.com/user-attachments/assets/7f22e8ae-d17f-40dc-ae1e-8adb9e1bf99a">
 
+
 **Classes** 
 RandomImageView
+
 **RandomImageInteractor**
 protocol RandomImageInteractorProtocol: AnyObject {
     func fetchRandomContent()
 }
 fetchRandomImage()
 fetchRandomFact()
+
 **RandomImagePresenter**
 protocol RandomImageInteractorOutputProtocol: AnyObject {
     func didFetchRandomImage(_ image: ImageModel)
     func didFetchRandomFact(_ fact: CatFactResponse)
 }
+
 **ImageModel**
 struct ImageModel: Decodable {
     let id: String
@@ -49,6 +53,7 @@ struct ImageModel: Decodable {
 struct CatFactResponse: Codable {
     let data: [String]
 }
+
 
 **RandomImageRouter**
 Creates Viewe and Navigates to ViewController and binding all the Presenter, Entity(Model), Interactor
